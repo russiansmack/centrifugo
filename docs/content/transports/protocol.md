@@ -492,7 +492,7 @@ It's also possible to subscribe connection to channels on server side. In this c
 
 ### Message recovery
 
-Client should automatically recover messages after being disconnected due to network problems and set appropriate fields in subscribe event context. Two important fields in `onSubscribeSuccess` event context are `isRecovered` and `isResubscribe`. First field let user know what server thinks about subscription state - were all messages recovered or not. The second field must only be true if resubscribe was caused by temporary network connection lost. If user initiated resubscribe himself (calling `unsubscribe` method and then `subscribe` method) then recover workflow should not be used and `isResubscribe` must be `false`.
+Client should automatically recover messages after being disconnected due to network problems and set appropriate fields in subscribe event context. Two important fields in `onSubscribeSuccess` event context are `recovered` and `isResubscribe`. First field let user know what server thinks about subscription state - were all messages recovered or not. The second field must only be true if resubscribe was caused by temporary network connection lost. If user initiated resubscribe himself (calling `unsubscribe` method and then `subscribe` method) then recover workflow should not be used and `isResubscribe` must be `false`.
 
 ### Disconnect code and reason
 
